@@ -8,6 +8,7 @@ import {
   Box,
   Divider,
 } from "@mantine/core";
+import Header from "./Header";
 
 interface TransactionData {
   topUpNumber: string;
@@ -38,47 +39,22 @@ export default function ConfirmationTransaction({
   ];
 
   return (
-    <Box h="20vh" bg="linear-gradient(135deg, #1e88e5 0%, #1565c0 100%)">
-      {/* Decorative dots */}
-      {[
-        { top: 20, left: 20 },
-        { top: 20, right: 20 },
-      ].map((pos, idx) => (
-        <Box
-          key={idx}
-          pos="absolute"
-          {...pos}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 8px)",
-            gap: 8,
-          }}
-        >
-          {Array.from({ length: 20 }).map((_, i) => (
-            <Box
-              key={i}
-              w={4}
-              h={4}
-              bg="rgb(255, 255, 255)"
-              style={{ borderRadius: "50%" }}
-            />
-          ))}
-        </Box>
-      ))}
-
-      <Container size="lg" p={20}>
-        <Text c="white" size="xl" fw={600} mb={30} ta="center">
-          Mobile Top up
-        </Text>
-
-        <Paper radius="lg" shadow="lg">
-          <Box bg="#e3f2fd" p="md" style={{ borderRadius: "12px 12px 0 0" }}>
+    <Box h="100vh" bg="#f0f0f0" style={{ overflow: "auto" }}>
+      <Header />
+      <Container
+        size="lg"
+        mt={{ base: -40, sm: -50 }}
+        p={20}
+        px={{ base: "md", sm: "lg" }}
+      >
+        <Paper radius="lg" shadow="lg" p="sm" pt={24} mt={16}>
+          <Box bg="#e3f2fd" p="sm" m="md">
             <Text c="#1565c0" fw={500} ta="center">
               Confirm transaction details
             </Text>
           </Box>
 
-          <Stack gap="lg" p="xl">
+          <Stack gap="lg" p="xl" pt={0}>
             {transactionItems.map((item, idx) => (
               <Group key={idx} justify="space-between">
                 <Text c="dimmed" size="sm">
@@ -99,7 +75,7 @@ export default function ConfirmationTransaction({
               </Text>
             </Group>
 
-            <Group justify="end" gap="md" mt="170">
+            <Group justify="end" gap="md" mt="140">
               <Button variant="light" size="md" px="xl" onClick={onBack}>
                 Back
               </Button>
