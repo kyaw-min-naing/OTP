@@ -5,7 +5,7 @@ export default function Header() {
   const isMobile = useMediaQuery("(max-width: 1240px)");
 
   return (
-    <Box h="20vh" bg="linear-gradient(135deg, #1e88e5 0%, #1565c0 100%)">
+    <Box h="18vh" bg="linear-gradient(135deg, #1e88e5 0%, #1565c0 100%)">
       {[
         { top: 20, left: 30 },
         { top: 20, right: 30 },
@@ -41,7 +41,7 @@ export default function Header() {
           justifyContent: isMobile ? "center" : "flex-start",
         }}
       >
-        <Text c="white" fz="xl" fw={600} size="lg">
+        <Text c="white" fz="lg" fw={600} size="lg">
           Mobile Top up
         </Text>
       </Container>
