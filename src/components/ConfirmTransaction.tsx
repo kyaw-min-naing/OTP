@@ -43,12 +43,12 @@ export default function ConfirmationTransaction({
       <Header />
       <Container
         size="lg"
-        mt={{ base: -40, sm: -50 }}
-        p={20}
-        px={{ base: "md", sm: "lg" }}
+        mt={-85}
+        // p={20}
+        px={{ base: "md", sm: "sm" }}
       >
-        <Paper radius="lg" shadow="lg" p="sm" pt={24} mt={16}>
-          <Box bg="#e3f2fd" p="sm" m="md">
+        <Paper radius="lg" shadow="lg" p="sm" pt={24} mt={0}>
+          <Box bg="#e3f2fd" p="sm" m="sm">
             <Text c="#1565c0" fw={500} ta="center">
               Confirm transaction details
             </Text>
@@ -75,7 +75,7 @@ export default function ConfirmationTransaction({
               </Text>
             </Group>
 
-            <Group justify="end" gap="md" mt="140">
+            <Group justify="end" gap="md" mt="170px">
               <Button variant="light" size="md" px="xl" onClick={onBack}>
                 Back
               </Button>

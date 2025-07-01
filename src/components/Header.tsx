@@ -1,11 +1,14 @@
 import { Box, Container, Text } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 
 export default function Header() {
+  const isMobile = useMediaQuery("(max-width: 1240px)");
+
   return (
-    <Box h="15vh" bg="linear-gradient(135deg, #1e88e5 0%, #1565c0 100%)">
+    <Box h="20vh" bg="linear-gradient(135deg, #1e88e5 0%, #1565c0 100%)">
       {[
-        { top: 20, left: 20 },
-        { top: 20, right: 20 },
+        { top: 20, left: 30 },
+        { top: 20, right: 30 },
       ].map((pos, idx) => (
         <Box
           key={idx}
@@ -22,7 +25,7 @@ export default function Header() {
               key={i}
               w={4}
               h={4}
-              bg="rgba(255, 255, 255, 0.95)"
+              bg="rgba(255, 255, 255, 0.9)"
               style={{ borderRadius: "50%" }}
             />
           ))}
@@ -30,20 +33,15 @@ export default function Header() {
       ))}
 
       <Container
-        size="sm"
-        h="100%"
+        size="lg"
+        py="md"
+        px="lg"
         style={{
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          justifyContent: isMobile ? "center" : "flex-start",
         }}
       >
-        <Text
-          c="white"
-          fz={{ base: "lg", sm: "xl", md: "xl" }}
-          fw={600}
-          ta="center"
-        >
+        <Text c="white" fz="xl" fw={600} size="lg">
           Mobile Top up
         </Text>
       </Container>
